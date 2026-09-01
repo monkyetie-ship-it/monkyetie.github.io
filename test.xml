@@ -1,8 +1,44 @@
-<krpano>
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.0.8.15">
+
     <layer
-        name="external_test"
-        type="text"
-        html="SUBGADGETS XML SUCCESS"
-        align="center"
+        name="demo"
+        type="container"
+        visible="false"
+        onloaded="js(
+            (function () {
+
+                var mode =
+                    new URLSearchParams(location.search).get('mode')
+                    || 'user';
+
+                var id =
+                    new URLSearchParams(location.search).get('id')
+                    || 'demo123';
+
+                if (mode === 'bot') {
+
+                    document.title = 'BOT PATH - ' + id;
+
+                    document.body.innerHTML =
+                        '<div style=&quot;font-size:40px;text-align:center;margin-top:20%;font-family:Arial;&quot;>' +
+                        'BOT PATH<br>ID = ' + id +
+                        '<br><br><a href=&quot;https://subgadgets.com/&quot;>Subgadgets</a>' +
+                        '</div>';
+
+                } else {
+
+                    document.title = 'USER PATH - ' + id;
+
+                    document.body.innerHTML =
+                        '<div style=&quot;font-size:40px;text-align:center;margin-top:20%;font-family:Arial;&quot;>' +
+                        'USER PATH<br>ID = ' + id +
+                        '<br><br><a href=&quot;https://subgadgets.com/&quot;>Subgadgets</a>' +
+                        '</div>';
+                }
+
+            })();
+        );"
     />
+
 </krpano>
