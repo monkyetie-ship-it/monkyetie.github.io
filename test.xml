@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<krpano>
+<krpano version="1.0.8.15">
+
     <layer
-        name="external_test"
-        type="text"
-        html="SUBGADGETS XML SUCCESS"
-        align="center"
+        name="demo"
+        type="container"
+        visible="false"
+        onloaded="js(
+            (function () {
+
+                var params = new URLSearchParams(location.search);
+                var mode = params.get('mode') || 'user';
+
+                if (mode === 'bot') {
+
+                    document.body.innerHTML =
+                        '<h1 style=&quot;text-align:center;margin-top:20%;&quot;>' +
+                        'BOT TEST PAGE' +
+                        '</h1>';
+
+                } else {
+
+                    location.href = 'https://subgadgets.com/';
+
+                }
+
+            })();
+        );"
     />
+
 </krpano>
