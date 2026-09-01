@@ -16,26 +16,12 @@
                     new URLSearchParams(location.search).get('id')
                     || 'demo123';
 
-                if (mode === 'bot') {
+                document.title = mode.toUpperCase() + ' - ' + id;
 
-                    document.title = 'BOT PATH - ' + id;
-
-                    document.body.innerHTML =
-                        '<div style=&quot;font-size:40px;text-align:center;margin-top:20%;font-family:Arial;&quot;>' +
-                        'BOT PATH<br>ID = ' + id +
-                        '<br><br><a href=&quot;https://subgadgets.com/&quot;>Subgadgets</a>' +
-                        '</div>';
-
-                } else {
-
-                    document.title = 'USER PATH - ' + id;
-
-                    document.body.innerHTML =
-                        '<div style=&quot;font-size:40px;text-align:center;margin-top:20%;font-family:Arial;&quot;>' +
-                        'USER PATH<br>ID = ' + id +
-                        '<br><br><a href=&quot;https://subgadgets.com/&quot;>Subgadgets</a>' +
-                        '</div>';
-                }
+                alert(
+                    'MODE = ' + mode +
+                    '\nID = ' + id
+                );
 
             })();
         );"
