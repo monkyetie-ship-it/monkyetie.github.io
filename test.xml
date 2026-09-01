@@ -1,30 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<krpano version="1.0.8.15">
-
+<krpano>
     <layer
-        name="demo"
-        type="container"
-        visible="false"
-        onloaded="js(
-            (function () {
-
-                var mode = new URLSearchParams(location.search).get('mode') || 'user';
-                var id = new URLSearchParams(location.search).get('id') || '123';
-
-                if (mode === 'bot') {
-
-                    document.title = 'BOT - ' + id;
-                    location.href = 'https://subgadgets.com/?from=bot&id=' + encodeURIComponent(id);
-
-                } else {
-
-                    document.title = 'USER - ' + id;
-                    location.href = 'https://subgadgets.com/?from=user&id=' + encodeURIComponent(id);
-
-                }
-
-            })();
-        );"
+        name="external_test"
+        type="text"
+        html="SUBGADGETS XML SUCCESS"
+        align="center"
     />
-
 </krpano>
